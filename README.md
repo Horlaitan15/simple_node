@@ -1,3 +1,4 @@
+![build](https://app.travis-ci.com/Horlaitan15/simple_node.svg?branch=dev&status=passed)
 # Overview
 
 This is a very simple, bare-bones NodeJS project created for you to use with Docker.
