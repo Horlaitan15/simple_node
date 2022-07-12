@@ -1,0 +1,23 @@
+language: node_js
+node_js:
+  - 13
+
+services:
+  - docker
+
+# pre-testing installa
+install:
+  - echo "Nothing needs to be installed."
+
+# Scripts to be ran.
+before_script:
+  - echo "No test."
+
+script:
+  - docker --version
+  - docker build -t try_travis .
+  - docker tag try_travis horlaitan15/try_travis:latest
+
+after_success:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push horlaitan15/try_travis
